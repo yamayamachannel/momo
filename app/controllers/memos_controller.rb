@@ -73,3 +73,9 @@ class MemosController < ApplicationController
       params.require(:memo).permit(:title, :bank, :wallet, :sum)
     end
 end
+
+$sum = "sum"
+
+def hensu
+ $sum
+ end
