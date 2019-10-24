@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<html>
+
+  <head>
+  <meta charset = "utf-8">
+<script>
+
+const a = <%= @memo.bank%>
+
+function plus(){
+  var kazu = document.getElementById('id_plus').value;
+  var y = Number(kazu);
+  alert (a+y);
+}
+function t(){
+var tasu = prompt("kane") ;
+alert(Number(tasu)+a);
+}
+</script>
+
+</head>
+
+<body>
+  
+  <p>
+  <strong>追加する金額を入力してください</strong>
+  </p>
+  
+
+
+  <strong>現在の金額:</strong>
+<p><%= @memo.bank %></p>
+  <br>
+  <input type = "text" id="id_plus" ><br>
+  <input type = "button" value="<%= @memo.bank %>" onclick="plus();" >
+  <input type = "button" value="botan" onclick="alert(a);" >
+  <input type = "button" value="tasu" onclick="t();" >
+  <br>
+
+  <%= link_to 'Back', memos_path %>
+
+</html> 

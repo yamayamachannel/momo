@@ -1,0 +1,3 @@
+class Memo < ApplicationRecord
+    
+end
