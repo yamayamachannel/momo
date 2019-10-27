@@ -31,6 +31,8 @@
 
 <div id="rightMenu">
 <h3>MENU</h3>
+  <%= link_to"top",home_index_path %><br>
+  <%= link_to "ログアウト", destroy_user_session_path, method: "delete" %><br>
   <%= link_to '新規ユーザー', new_memo_path %>
 </div>
   
