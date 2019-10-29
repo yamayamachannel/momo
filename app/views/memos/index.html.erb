@@ -20,8 +20,8 @@
           <th colspan="2"><%= memo.bank %></th>
         </tr>
         <tr>
-          <td><%= link_to '変更', memo %></td>
-          <td><%= link_to '削除', memo, method: :delete, data: { confirm: '本当に消しますか?' } %></td>
+          <td><%= link_to '変更', memo, class: 'btn' %></td>
+          <td><%= link_to '削除', memo, method: :delete, data: { confirm: '本当に消しますか?' }, class: 'btn' %></td>
         </tr>
       <% end %>
      </tbody>
@@ -31,9 +31,9 @@
 
 <div id="rightMenu">
 <h3>MENU</h3>
-  <%= link_to"top",home_index_path %><br>
-  <%= link_to "ログアウト", destroy_user_session_path, method: "delete" %><br>
-  <%= link_to '新規ユーザー', new_memo_path %>
+  <%= link_to"top",home_index_path, class: 'btn' %><br>
+  <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
+  <%= link_to '新規ユーザー', new_memo_path, class: 'btn' %>
 </div>
   
 
@@ -41,4 +41,4 @@
 
  </body>
    
-</html>
+</html>    
