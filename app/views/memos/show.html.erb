@@ -29,12 +29,18 @@ alert($a);
   <p>
   <strong>追加する金額を入力してください</strong>
   </p>
-<br>  
+
   <input type = "text" id="id_plus" ><br>
+
   <input type = "button" value="+" onclick="plus();" >
   <input type = "button" value="botan" onclick="alert($a);" >
-  <!--<input type = "button" value="tasu" onclick="t();" >-->
+  <input type = "button" value="tasu" onclick="t();" >
   <%= button_to "tasu", {controller: 'memos', action: 'add'}, {method: :get} %>
+  
+  <strong>引き出す金額を入力してください</strong>
+  <br>
+  <input type = "text" id="id_plus" >
+  <%= button_to "hiku", {controller: 'memos', action: 'maina'}, {method: :get} %>
   <br>
 <br>
   <%= link_to 'ホームに戻る', memos_path %>
