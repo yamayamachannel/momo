@@ -73,3 +73,4 @@ class MemosController < ApplicationController
       params.require(:memo).permit(:title, :bank, :wallet, :top)
     end
 end
+

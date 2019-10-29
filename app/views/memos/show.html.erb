@@ -4,26 +4,26 @@
 
   <head>
   <meta charset = "utf-8">
-<script>
 
-a = <%= @memo.bank%>;
-
+  <script>
 function plus(){
   var kazu = document.getElementById('id_plus').value;
   var y = Number(kazu);
-  alert (a+y);
+  alert ($a+y);
 }
 function t(){
 var tasu = prompt("kane") ;
-alert(Number(tasu)+a);
+$a+= Number(tasu)
+alert($a);
 }
 </script>
+
 
 </head>
 
 <body>
   <strong>現在の金額:</strong>
-<%= @memo.bank %>
+  print "#{a}"
   <br><br>
   <p>
   <strong>追加する金額を入力してください</strong>
@@ -31,7 +31,7 @@ alert(Number(tasu)+a);
 <br>  
   <input type = "text" id="id_plus" ><br>
   <input type = "button" value="+" onclick="plus();" >
-  <input type = "button" value="botan" onclick="alert(a);" >
+  <input type = "button" value="botan" onclick="alert($a);" >
   <input type = "button" value="tasu" onclick="t();" >
   <br>
 <br>
