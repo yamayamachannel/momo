@@ -6,7 +6,7 @@
   <meta charset = "utf-8">
 <script>
 
-const a = <%= @memo.bank%>
+a = <%= @memo.bank%>;
 
 function plus(){
   var kazu = document.getElementById('id_plus').value;
@@ -22,22 +22,19 @@ alert(Number(tasu)+a);
 </head>
 
 <body>
-  
+  <strong>現在の金額:</strong>
+<%= @memo.bank %>
+  <br><br>
   <p>
   <strong>追加する金額を入力してください</strong>
   </p>
-  
-
-
-  <strong>現在の金額:</strong>
-<p><%= @memo.bank %></p>
-  <br>
+<br>  
   <input type = "text" id="id_plus" ><br>
-  <input type = "button" value="<%= @memo.bank %>" onclick="plus();" >
+  <input type = "button" value="+" onclick="plus();" >
   <input type = "button" value="botan" onclick="alert(a);" >
   <input type = "button" value="tasu" onclick="t();" >
   <br>
-
-  <%= link_to 'Back', memos_path %>
+<br>
+  <%= link_to 'ホームに戻る', memos_path %>
 
 </html> 
