@@ -26,21 +26,34 @@ alert($a);
   <strong>現在の金額:</strong>
   <%= @memo.bank %>
   <br><br>
+
+  
+
+
+
   <p>
   <strong>追加する金額を入力してください</strong>
   </p>
 
-  <input type = "text" id="id_plus" ><br>
+
+  <%= form_tag({controller: :memos, action: :plus}, id: :fm) do %>
+      <%= text_field_tag :money, '' %>
+      <%= submit_tag 'add' %>
+  <% end %>
+    
+  <!--  t=<input type = "text" id="id_plus" name="money" >
+  <%= button_to "botan", {controller: 'memos', action: 'plus'}, {method: :post} %>
+  <br>
 
   <input type = "button" value="+" onclick="plus();" >
   <input type = "button" value="botan" onclick="alert($a);" >
   <input type = "button" value="tasu" onclick="t();" >
-  <%= button_to "tasu", {controller: 'memos', action: 'add'}, {method: :get} %>
+  <%= button_to "tasu", {controller: 'memos', action: 'add'}, {method: :post} %>-->
   
   <strong>引き出す金額を入力してください</strong>
   <br>
   <input type = "text" id="id_plus" >
-  <%= button_to "hiku", {controller: 'memos', action: 'maina'}, {method: :get} %>
+  <%= button_to "hiku", {controller: 'memos', action: 'maina'}, {method: :post} %>
   <br>
 <br>
   <%= link_to 'ホームに戻る', memos_path %>

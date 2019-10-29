@@ -75,6 +75,15 @@ class MemosController < ApplicationController
     redirect_to :action => 'show'
   end
 
+  def plus
+    @memo = Memo.find(params[:id])
+    t=params["money"]
+    @memo.bank += t.to_i
+    @memo.save
+    redirect_to :action => 'show'
+  end
+ 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_memo
