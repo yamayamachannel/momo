@@ -212,18 +212,20 @@ label {
 }
 
 a.cp_btn {
-	display: block;
-	text-align: center;
+	display: inline-block;
+  text-align: center;
+  font-size: 60px;
 	text-decoration: none;
-	color: #FF5722;
-	width: 120px;
-	height: 120px;
-	line-height: 120px;
-	border: double 4px #FF5722;
+	color: blue;
+	width: 300px;
+	height: 300px;
+	line-height: 300px;
+	border: double 4px blue;
 	border-radius: 50%;
 	vertical-align: middle;
 	overflow: hidden;
-	transition: .6s;
+  transition: .6s;
+  margin-right: 100px;
 }
 a.cp_btn:hover {
 	transform: rotateY(360deg);
