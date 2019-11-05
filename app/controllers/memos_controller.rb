@@ -1,5 +1,7 @@
 class MemosController < ApplicationController
   before_action :set_memo, only: [:show, :edit, :update, :destroy ]
+  before_action :authenticate_user!
+
 
   # GET /memos
   # GET /memos.json

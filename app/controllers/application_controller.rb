@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     
     def after_sign_in_path_for(resource)
-        memos_path(resource)
+        memos_path
     end
 end

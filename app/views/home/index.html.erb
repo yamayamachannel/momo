@@ -4,13 +4,19 @@
 </head>
 <body>
 
-<%= link_to "ログイン", new_user_session_path %><br >
-<%= link_to "登録", new_user_registration_path %>
+
+<%= link_to "ログイン", new_user_session_path, class: "cp_btn" %>
+
+<!--<%= link_to "ログイン", new_user_session_path %><br >-->
+<br><br><br>
+
+
+<%= link_to "登録", new_user_registration_path, class: "cp_btn" %>
 </font>
 
 <br><br><br>
 
-<%= link_to "ログアウト", destroy_user_session_path, method: "delete" %>
+<%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: "cp_btn" %>
 
 <br>
 </body>
