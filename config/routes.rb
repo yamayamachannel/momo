@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   get 'home/index'
   devise_for :users
   resources :memos
-  post 'memos/:id/add', to: 'memos#add'
-  post 'memos/:id/maina', to: 'memos#maina'
+  post 'memos/:id/hiku', to: 'memos#hiku'
   post 'memos/:id/plus', to: 'memos#plus'
   root "home#index"
   

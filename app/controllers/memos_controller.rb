@@ -61,20 +61,6 @@ class MemosController < ApplicationController
     end
   end
 
-  def add
-    @memo = Memo.find(params[:id])
-    @memo.bank += 1000
-    @memo.save
-    redirect_to :action => 'show'
-  end
-
-  def maina
-    @memo = Memo.find(params[:id])
-    @memo.bank -= 1000
-    @memo.save
-    redirect_to :action => 'show'
-  end
-
   def plus
     @memo = Memo.find(params[:id])
     t=params["money"]
@@ -83,6 +69,14 @@ class MemosController < ApplicationController
     redirect_to :action => 'show'
   end
  
+  def hiku
+    @memo = Memo.find(params[:id])
+    m=params["money"]
+    @memo.bank -= m.to_i
+    @memo.save
+    redirect_to :action => 'show'
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
