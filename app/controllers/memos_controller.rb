@@ -6,7 +6,7 @@ class MemosController < ApplicationController
   # GET /memos
   # GET /memos.json
   def index
-    @memos = Memo.all
+    @memos = Memo.where(user: current_user)
   end
 
   # GET /memos/1
@@ -27,6 +27,7 @@ class MemosController < ApplicationController
   # POST /memos.json
   def create
     @memo = Memo.new(memo_params)
+    @memo.user = current_user
 
     respond_to do |format|
       if @memo.save
