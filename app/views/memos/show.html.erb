@@ -1,61 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <html>
-
-  <head>
   <meta charset = "utf-8">
-
-  <script>
-  $a = <%= @memo.bank %>
-function plus(){
-  var kazu = document.getElementById('id_plus').value;
-  var y = Number(kazu);
-  alert ($a+y);
-}
-function t(){
-var tasu = prompt("kane") ;
-$a+= Number(tasu)
-alert($a);
-}
-</script>
-
-
-</head>
-
 <body>
   <strong>現在の金額:</strong>
-  <%= @memo.bank %>
-  <br><br>
-
-  
-
-
-
+  <%= @memo.bank %><br>
   <p>
   <strong>追加する金額を入力してください</strong>
   </p>
-
-
   <%= form_tag({controller: :memos, action: :plus}, id: :fm) do %>
       <%= text_field_tag :money, '' %>
-      <%= submit_tag 'add' %>
-  <% end %>
-    
-  <!--  t=<input type = "text" id="id_plus" name="money" >
-  <%= button_to "botan", {controller: 'memos', action: 'plus'}, {method: :post} %>
-  <br>
-
-  <input type = "button" value="+" onclick="plus();" >
-  <input type = "button" value="botan" onclick="alert($a);" >
-  <input type = "button" value="tasu" onclick="t();" >
-  <%= button_to "tasu", {controller: 'memos', action: 'add'}, {method: :post} %>-->
-  
+      <%= submit_tag '追加' %>
+  <% end %><br>
   <strong>引き出す金額を入力してください</strong>
-  <br>
-  <input type = "text" id="id_plus" >
-  <%= button_to "hiku", {controller: 'memos', action: 'maina'}, {method: :post} %>
-  <br>
-<br>
+  </p>
+  <%= form_tag({controller: :memos, action: :hiku}, id: :fm) do %>
+      <%= text_field_tag :money, '' %>
+      <%= submit_tag '引出' %>
+  <% end %><br>
   <%= link_to 'ホームに戻る', memos_path %>
 
 </html> 
