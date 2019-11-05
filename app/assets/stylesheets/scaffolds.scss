@@ -212,21 +212,19 @@ label {
 }
 
 a.cp_btn {
-	display: inline-block;
-  text-align: center;
-  font-size: 60px;
-	text-decoration: none;
-	color: blue;
-	width: 300px;
-	height: 300px;
-	line-height: 300px;
-	border: double 4px blue;
-	border-radius: 50%;
-	vertical-align: middle;
-	overflow: hidden;
-  transition: .6s;
+  border-radius: 50%;
   margin-right: 100px;
+  font-size: 60px;
+	display: inline-block;
+	width: 250px;
+	padding: 0.8em;
+	text-align: center;
+	text-decoration: none;
+	color: rgb(53, 172, 202);
+	border: 2px solid rgb(64, 187, 236);
+	transition: .4s;
 }
 a.cp_btn:hover {
-	transform: rotateY(360deg);
+	background: rgb(64, 224, 236);
+	color: #fff;
 }
