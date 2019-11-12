@@ -213,7 +213,8 @@ label {
 
 a.cp_btn {
   border-radius: 50%;
-  margin-right: 100px;
+  margin-right: 50px;
+  margin-bottom: 50px;
   font-size: 60px;
 	display: inline-block;
 	width: 250px;
@@ -221,7 +222,7 @@ a.cp_btn {
 	text-align: center;
 	text-decoration: none;
 	color: rgb(53, 172, 202);
-	border: 2px solid rgb(64, 187, 236);
+	border: 2px solid rgb(0, 117, 212);
 	transition: .4s;
 }
 a.cp_btn:hover {
