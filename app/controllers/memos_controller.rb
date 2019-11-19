@@ -80,6 +80,21 @@ class MemosController < ApplicationController
     redirect_to :action => 'show'
   end
 
+  def tasuhiku
+    if params[:button1]
+      @memo = Memo.find(params[:id])
+      t=params["money"]
+      @memo.bank += t.to_i
+      @memo.save
+      redirect_to :action => 'show'
+    elsif params[:button2]
+      @memo = Memo.find(params[:id])
+      m=params["money"]
+      @memo.bank -= m.to_i
+      @memo.save
+      redirect_to :action => 'show'
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -90,6 +105,5 @@ class MemosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def memo_params
       params.require(:memo).permit(:title, :bank, :wallet, :top)
-    end
+    end  
 end
-

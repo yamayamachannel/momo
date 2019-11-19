@@ -6,18 +6,24 @@
   <strong>現在の金額:</strong>
   <%= @memo.bank %><br>
   <p>
-  <strong>追加する金額を入力してください</strong>
+  <strong>金額を入力してください</strong>
   </p>
-  <%= form_tag({controller: :memos, action: :plus}, id: :fm) do %>
-      <%= text_field_tag :money, '' %>
-      <%= submit_tag '追加' %>
+  <%= form_tag({controller: :memos, action: :tasuhiku}, id: :fm) do %>
+    <%= text_field_tag :money, '' %>
+    <!--<%= submit_tag '追加' %>
+    <%= submit_tag '引出' %>-->
+<form action="...." method="post">
+<input type="submit" name="button1" value="追加" />
+<input type="submit" name="button2" value="引出" />
+
+</form>
   <% end %><br>
-  <strong>引き出す金額を入力してください</strong>
+  <!--<strong>引き出す金額を入力してください</strong>
   </p>
   <%= form_tag({controller: :memos, action: :hiku}, id: :fm) do %>
       <%= text_field_tag :money, '' %>
       <%= submit_tag '引出' %>
-  <% end %><br>
+  <% end %><br>-->
   <%= link_to 'ホームに戻る', memos_path %>
 
 </html> 
