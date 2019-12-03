@@ -12,6 +12,7 @@ class MemosController < ApplicationController
   # GET /memos/1
   # GET /memos/1.json
   def show
+    @memo = Memo.find(params[:id])
   end
 
   # GET /memos/new
