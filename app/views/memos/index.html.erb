@@ -3,7 +3,7 @@
 <header>
 <h1>Moneyger</h1>
 <%= link_to '新しい金額場所の追加', new_memo_path, class: 'btn' %>
-<h2>ようこそ、<%= current_user.email %>さん</h2>
+<h2>ようこそ、<%= current_user.username %>さん</h2>
 
 
 </header>
@@ -34,6 +34,7 @@
 <div id="rightMenu">
 <h3>MENU</h3>
   <%= link_to"top",home_index_path, class: 'btn' %><br>
+  <%= link_to"他のユーザー一覧",users_path, class: 'btn' %><br>
   <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
 </div>
   

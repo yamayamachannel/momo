@@ -1,2 +1,7 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>他のユーザー</h1>
+ <% @users.each do |user| %>
+     <%= user.username %><br />
+ <% end %> 
+
+ <br><br>
+ <%= link_to 'ホームに戻る', memos_path %>
