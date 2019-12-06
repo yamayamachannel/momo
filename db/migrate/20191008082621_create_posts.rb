@@ -4,8 +4,6 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :title
       t.integer :bank
       t.integer :wallet
-      t.integer :sum
-      t.integer :plus
       t.timestamps
     end
   end
