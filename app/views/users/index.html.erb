@@ -1,7 +1,14 @@
 <h1>他のユーザー</h1>
+
+<p>検索</p>
+<%= form_tag(users_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :username => nil %>
+<% end %>
+
  <% @users.each do |user| %>
      <%= user.username %><br />
  <% end %> 
-
+ <%= yield %>
  <br><br>
  <%= link_to 'ホームに戻る', memos_path %>

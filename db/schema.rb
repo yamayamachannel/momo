@@ -16,8 +16,6 @@ ActiveRecord::Schema.define(version: 2019_11_05_083603) do
     t.string "title"
     t.integer "bank"
     t.integer "wallet"
-    t.integer "sum"
-    t.integer "plus"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -28,8 +26,6 @@ ActiveRecord::Schema.define(version: 2019_11_05_083603) do
     t.string "title"
     t.integer "bank"
     t.integer "wallet"
-    t.integer "sum"
-    t.integer "plus"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
