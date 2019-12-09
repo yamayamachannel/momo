@@ -1,14 +1,17 @@
-h1:first-letter {
-  text-decoration: none;
-	font-size: 2em;
-	color: #7171ac;
+h1 {
+  font-size: 40px;
+  position: relative;
+  color:royalblue;
+	text-shadow: 0 0 2px white;
 }
 
-h1 {
-  position: relative;
-  color: #333333;
+.head{
   text-decoration: none;
-	text-shadow: 0 0 2px white;
+  color: royalblue;
+}
+
+.head:hover{
+  color:blue;
 }
 
 h1:before {

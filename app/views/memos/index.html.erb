@@ -1,7 +1,7 @@
 <!- #mainContents end -></div>
 <body>
 <header>
-<h1><%= link_to 'Moneyger', memos_path %></h1>
+<h1><%= link_to 'Moneyger', memos_path, class: 'head' %></h1>
 <%= link_to '新しい金額場所の追加', new_memo_path, class: 'btn' %>
 <h2>ようこそ、<%= current_user.username %>さん</h2>
 </header>
