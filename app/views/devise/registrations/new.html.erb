@@ -1,4 +1,7 @@
+<header>
+<h1><%= link_to 'Moneyger', home_index_path %></h1>
 <h2>登録する</h2>
+</header>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
