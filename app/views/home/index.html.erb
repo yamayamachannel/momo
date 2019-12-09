@@ -1,18 +1,11 @@
 <html>
-<head>
-<h1>トップページ</h1><br>
-</head>
+<header>
+<h1><%= link_to 'Moneyger', home_index_path %></h1>
+</header>
 <body>
 
 
 <%= link_to "ログイン", new_user_session_path, class: "cp_btn" %>
-<%= link_to "登録", new_user_registration_path, class: "cp_btn" %>
-
-
-
-
-
-
-<br>
+<%= link_to "登録", new_user_registration_path, class: "cp_btn" %><br>
 </body>
 </html>
