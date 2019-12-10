@@ -1,0 +1,24 @@
+<header>
+<h1><%= link_to 'Moneyger', memos_path, class: 'head' %></h1>
+</header>
+
+<body>
+<h2>意見箱</h2>
+<%= form_with url:soundboards_path ,local: true do |form| %>
+      <div class="field">
+     <%= form.text_field :opinion %>
+     </div>
+     <div class="actions">
+      <%= form.submit "送信" %>
+      </div>
+<% end%>
+
+      <% @soundboards.each do |soundboard| %>
+            <table border =solid  >
+            <br>
+                <tbody>
+                <tr><th>
+        <%= soundboard.opinion %><br />
+            </th></tr></tbody></table>
+      <% end %> 
+</body>
