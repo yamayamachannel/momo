@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_083603) do
+ActiveRecord::Schema.define(version: 2019_12_09_165408) do
 
   create_table "memos", force: :cascade do |t|
     t.string "title"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2019_11_05_083603) do
     t.string "title"
     t.integer "bank"
     t.integer "wallet"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "soundboards", force: :cascade do |t|
+    t.text "opinion"
+    t.text "history"
+    t.text "support"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
