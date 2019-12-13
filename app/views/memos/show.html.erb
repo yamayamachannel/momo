@@ -37,14 +37,18 @@
   <strong>金額を入力してください</strong>
   </p>
 
-  <%= form_tag({controller: :memos, action: :tasuhiku}, id: :fm) do %>
-    <%= text_field_tag :money, '' %>
-    <form action="...." method="post">
-    <input type="submit" name="button1" value="追加" />
-    <input type="submit" name="button2" value="引出" />
-  </form>
+  <%= form_with url: {controller: :memos, action: :tasuhiku}, id: :fm do |form| %>
+    <div class="field">
+    <%= form.text_field :money %>
+    </div>
+    <div class="actions">
+      <%= form.submit:"追加",name:'button1' %>
+    </div>
+    <div class="actions">
+      <%= form.submit:"減少",name:'button2'%>
+    </div>
   <% end %><br>
 
   <%= link_to 'ホームに戻る', memos_path %>
-
+</body>
 </html> 
