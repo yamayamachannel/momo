@@ -20,6 +20,6 @@ class SoundboardsController < ApplicationController
     end
 
     def soundboard_params
-        params.permit(:opinion,:support)
+        params.permit(:opinion)
     end
 end
