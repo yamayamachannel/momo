@@ -1,31 +1,54 @@
 <p id="notice"><%= notice %></p>
 <header>
 <h1><%= link_to 'Moneyger', memos_path, class: 'head' %></h1>
-<h2>金額の変更</h2>
 </header>
 
 <html>
   <meta charset = "utf-8">
 <body>
-  <strong>現在の金額:</strong>
-  <%= @memo.bank %><br>
-  <div id="rightMenu">
+<div id="rightMenu">
 <h3>MENU</h3>
   <%= link_to"top",memos_path, class: 'btn' %><br>
   <%= link_to"他のユーザー一覧",users_path, class: 'btn' %><br>
   <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
 </div>
+
+<h2>名前の変更</h2>
+<strong>現在の名前:</strong>
+  <%= @memo.title %><br>
+<%= form_with(model: @memo, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :名前 %>
+    <%= form.text_field :title %>  
+  </div>
+  <div class="actions">
+    <%= form.submit:決定 %>
+  </div>
+
+<% end%>
+
+<br><br><br>
+
+<h2>金額の変更</h2>
+  <strong>現在の金額:</strong>
+  <%= @memo.bank %><br>
+  
   <p>
   <strong>金額を入力してください</strong>
   </p>
-  <%= form_tag({controller: :memos, action: :tasuhiku}, id: :fm) do %>
-    <%= text_field_tag :money, '' %>
-<form action="...." method="post">
-<input type="submit" name="button1" value="追加" />
-<input type="submit" name="button2" value="引出" />
 
-</form>
+  <%= form_with url: {controller: :memos, action: :tasuhiku}, id: :fm do |form| %>
+    <div class="field">
+    <%= form.text_field :money %>
+    </div>
+    <div class="actions">
+      <%= form.submit:"追加",name:'button1' %>
+    </div>
+    <div class="actions">
+      <%= form.submit:"減少",name:'button2'%>
+    </div>
   <% end %><br>
-  <%= link_to 'ホームに戻る', memos_path %>
 
+  <%= link_to 'ホームに戻る', memos_path %>
+</body>
 </html> 

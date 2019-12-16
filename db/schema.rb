@@ -32,8 +32,6 @@ ActiveRecord::Schema.define(version: 2019_12_09_165408) do
 
   create_table "soundboards", force: :cascade do |t|
     t.text "opinion"
-    t.text "history"
-    t.text "support"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
