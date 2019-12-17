@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_165408) do
+ActiveRecord::Schema.define(version: 2019_12_17_071557) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "aiko"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "memos", force: :cascade do |t|
     t.string "title"
@@ -45,6 +52,8 @@ ActiveRecord::Schema.define(version: 2019_12_09_165408) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "group_id"
+    t.index ["group_id"], name: "index_users_on_group_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
