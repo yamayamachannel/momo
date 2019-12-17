@@ -1,1 +1,6 @@
 <h1><%= link_to 'Moneyger', memos_path, class: 'head' %></h1>
+
+<h2>グループ参加者一覧</h2><br>
+<% @users.each do |user| %>
+  <%= user.username %><br>
+<% end %>

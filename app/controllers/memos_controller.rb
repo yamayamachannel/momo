@@ -2,11 +2,14 @@ class MemosController < ApplicationController
   before_action :set_memo, only: [:show, :edit, :update, :destroy ]
   before_action :authenticate_user!
 
-
   # GET /memos
   # GET /memos.json
   def index
+    @user = current_user
     @memos = Memo.where(user: current_user)
+    if !@user.group_id.nil?
+      @group = Group.find(@user.group_id)
+    end
   end
 
   # GET /memos/1

@@ -1,13 +1,16 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update ]
+  before_action :authenticate_user!
 
 
   def new
-    @group=Group.new
+    @group = Group.new
   end
 
   def show
-
+    @user = current_user
+    @group = Group.find(@user.group_id)
+    @users = User.where(group_id: @group.id)
   end
 
   def create
