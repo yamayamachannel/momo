@@ -1,0 +1,11 @@
+<h1>Moneyger</h1>
+<p>Find me in app/views/groups/new.html.erb</p>
+
+<h2>グループを作成しましょう！</h2>
+
+<%= form_for @group, url: groups_create_path do |form| %>
+<%= form.label :name %> <%= form.text_field :name, id: :group_name %>
+<%= form.label :aiko %> <%= form.text_field :aiko, id: :group_aiko %>
+<%= form.submit %>
+<% end %>
+
