@@ -1,0 +1,9 @@
+<h1>Moneyger</h1>
+
+<h2>グループに参加しましょう！</h2>
+
+<%= form_tag({controller:'groups', action:'sanka2' },{method: :post})  do %>
+<%= label_tag :name %> <%= text_field_tag :name %>
+<%= label_tag :aiko %> <%= text_field_tag :aiko %>
+<%= submit_tag %>
+<% end %>

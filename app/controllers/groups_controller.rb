@@ -7,10 +7,30 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
+  def sanka
+    
+  end
+
   def show
     @user = current_user
     @group = Group.find(@user.group_id)
     @users = User.where(group_id: @group.id)
+  end
+
+  def sanka2
+    @user = current_user
+    @group = Group.find_by(name: params[:name])
+
+    if @group.nil?
+      redirect_to action: :sanka
+    else
+      if (@group.aiko == params[:aiko]) # 合言葉が一致した時
+        @user.update(group_id: @group.id)
+        redirect_to controller: :memos, action: :index 
+      else                               # 合言葉が一致しなかった時
+        redirect_to action: :sanka
+      end
+    end   
   end
 
   def create

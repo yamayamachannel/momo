@@ -37,6 +37,7 @@
   <%= link_to"top",memos_path, class: 'btn' %><br>
   <% if current_user.group_id.nil? =%>                           <!--グループに入ってないとき-->
     <%= link_to "グループ作成",groups_new_path, class: 'btn' %><br>
+    <%= link_to "グループ参加",groups_sanka_path, class: 'btn' %><br>
   <% else %>                                                     <!--グループに入っているとき-->
     <%= link_to "共有",groups_show_path, class: 'btn' %><br>
   <% end %>

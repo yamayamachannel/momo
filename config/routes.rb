@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'groups/new', to:'groups#new'
   post 'groups/create', to:'groups#create'
   get 'groups/show'
+  get 'groups/sanka'
+  post 'groups/sanka2'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
