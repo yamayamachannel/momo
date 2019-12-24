@@ -10,11 +10,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  #  def create
-  #    super
-  #    @memo = @user.memos.create(title: "銀行", bank: 0)
-  #    @memo2 = @user.memos.create(title: "財布", bank: 0)
-  #  end
+  def create
+    super
+
+    # logger.debug("*********************")
+    # logger.debug(@user)
+    # logger.debug("*********************")
+    begin
+      @memo = @user.memos.create(title: "銀行", bank: 0)
+      @memo2 = @user.memos.create(title: "財布", bank: 0)
+    rescue => e
+    end
+  end
 
   # GET /resource/edit
   # def edit
