@@ -21,8 +21,6 @@ class GroupsController < ApplicationController
     @user = current_user
     @user.update(group_id: nil)
     respond_to do |format|
-
-    #  redirect_to controller: :memos, action: :index 
      format.html { redirect_to memos_path, notice: '***グループを退会しました***' }
     end 
 
@@ -33,17 +31,22 @@ class GroupsController < ApplicationController
     @group = Group.find_by(name: params[:name])
 
     if @group.nil?
-      redirect_to action: :sanka
+      respond_to do |format|
+        format.html { redirect_to groups_new_path, notice: '***グループが存在しません***' }
+     end 
+      # redirect_to action: :sanka
     else
       if (@group.aiko == params[:aiko]) # 合言葉が一致した時
         @user.update(group_id: @group.id)
         respond_to do |format|
-
           #  redirect_to controller: :memos, action: :index 
            format.html { redirect_to memos_path, notice: '***グループに参加しました***' }
         end   
       else                               # 合言葉が一致しなかった時
-        redirect_to action: :sanka
+        # redirect_to action: :sanka
+        respond_to do |format|
+           format.html { redirect_to groups_new_path, notice: '***あいことばが一致しません***' }
+        end 
       end
     end   
   end
