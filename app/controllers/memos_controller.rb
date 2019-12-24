@@ -95,7 +95,7 @@ class MemosController < ApplicationController
       elsif
         @memo.bank += t.to_i
         @memo.save
-        Log.create(money:t.to_i, memo_id:@memo.id)
+        Log.create(money:t.to_i, comment:params["comment"], memo_id:@memo.id)
       end    
       redirect_to :action => 'show'
     
@@ -108,7 +108,7 @@ class MemosController < ApplicationController
       elsif  
         @memo.bank -= m.to_i
         @memo.save
-        Log.create(money:-m.to_i, memo_id:@memo.id)
+        Log.create(money:-m.to_i, comment:params["comment"], memo_id:@memo.id)
       end
       redirect_to :action => 'show'
     
