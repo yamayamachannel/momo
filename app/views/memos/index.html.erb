@@ -10,9 +10,8 @@
 <div id="mainContents">
 
     <% @memos.each do |memo| %>
-   <table border =solid  >
-    <br>
-        <tbody id="table1">
+      <table border=solid >
+      <tbody id="table1">
         <tr>
           <th bgcolor="liteblue" colspan="3" ><%= memo.title %></th>
         </tr>
@@ -24,10 +23,15 @@
           <td><%= link_to '変更', memo, class: 'btn' %></td>
           <td><%= link_to '削除', memo, method: :delete, data: { confirm: '本当に消しますか?' }, class: 'btn' %></td>
         </tr>
-      <% end %>
+        <% memo.logs.each do |log| %>
+          <%= log.money %> / <%= log.comment %> / <%= log.created_at %><br>
+        <% end %>
      </tbody>
     </table>
+    <br>
+    <% end %>
  </div>
+
       
 
 <div id="rightMenu">
