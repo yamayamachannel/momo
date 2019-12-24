@@ -85,7 +85,6 @@ class MemosController < ApplicationController
   # end
 
   def tasuhiku
-  
 
     if params[:button1]
       @memo = Memo.find(params[:id])      #@memoみたいに感じで@〜を作ってfindでもうひとつ見つけてくる 
@@ -96,7 +95,7 @@ class MemosController < ApplicationController
       elsif
         @memo.bank += t.to_i
         @memo.save
-        Log.create(money:t.to_i)
+        Log.create(money:t.to_i, memo_id:@memo.id)
       end    
       redirect_to :action => 'show'
     
@@ -109,7 +108,7 @@ class MemosController < ApplicationController
       elsif  
         @memo.bank -= m.to_i
         @memo.save
-        Log.create(money:-m.to_i)
+        Log.create(money:-m.to_i, memo_id:@memo.id)
       end
       redirect_to :action => 'show'
     
