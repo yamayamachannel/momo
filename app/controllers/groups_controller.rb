@@ -20,8 +20,12 @@ class GroupsController < ApplicationController
   def taikai
     @user = current_user
     @user.update(group_id: nil)
+    respond_to do |format|
 
-    redirect_to controller: :memos, action: :index 
+    #  redirect_to controller: :memos, action: :index 
+     format.html { redirect_to memos_path, notice: '***グループを退会しました***' }
+    end 
+
   end
 
   def sanka2
@@ -48,7 +52,7 @@ class GroupsController < ApplicationController
       if @group.save
         @user.group_id = @group.id
         @user.save
-        format.html { redirect_to memos_path, notice: 'グループが作成されました' }
+        format.html { redirect_to memos_path, notice: '***グループが作成されました***' }
         #format.json { render :show, status: :created, location: groups_url }
       else
         format.html { render :new }
