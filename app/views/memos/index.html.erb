@@ -40,6 +40,8 @@
     <%= link_to "グループ参加",groups_sanka_path, class: 'btn' %><br>
   <% else %>                                                     <!--グループに入っているとき-->
     <%= link_to "共有",groups_show_path, class: 'btn' %><br>
+    <%= link_to "グループ退会",groups_taikai_path, class: 'btn' %><br>
+
   <% end %>
     
   <%= link_to"他のユーザー一覧",users_path, class: 'btn' %><br>

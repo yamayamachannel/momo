@@ -17,6 +17,13 @@ class GroupsController < ApplicationController
     @users = User.where(group_id: @group.id)
   end
 
+  def taikai
+    @user = current_user
+    @user.update(group_id: nil)
+
+    redirect_to controller: :memos, action: :index 
+  end
+
   def sanka2
     @user = current_user
     @group = Group.find_by(name: params[:name])
