@@ -8,8 +8,8 @@ class MemosController < ApplicationController
   def index
     @user = current_user
     @memos = Memo.where(user: current_user)
-    if !@user.group_id.nil?
-      @group = Group.find(@user.group_id)
+    if !@user.group_id.nil?                 #もしグループに入っていたら
+      @group = Group.find(@user.group_id)   #ユーザーのグループidを見つけてグループを特定
     end
   end
 
