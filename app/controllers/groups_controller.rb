@@ -37,7 +37,11 @@ class GroupsController < ApplicationController
     else
       if (@group.aiko == params[:aiko]) # 合言葉が一致した時
         @user.update(group_id: @group.id)
-        redirect_to controller: :memos, action: :index 
+        respond_to do |format|
+
+          #  redirect_to controller: :memos, action: :index 
+           format.html { redirect_to memos_path, notice: '***グループに参加しました***' }
+        end   
       else                               # 合言葉が一致しなかった時
         redirect_to action: :sanka
       end
