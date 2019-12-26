@@ -490,7 +490,7 @@ Devise uses flash messages with I18n, in conjunction with the flash keys :notice
 en:
   devise:
     sessions:
-      signed_in: 'Signed in successfully.'
+      signed_in: 'ログインしました.'
 ```
 
 You can also create distinct messages based on the resource you've configured using the singular name given in routes:
