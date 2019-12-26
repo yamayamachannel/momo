@@ -3,4 +3,6 @@
 <h2>グループ参加者一覧</h2><br>
 <% @users.each do |user| %>
   <%= user.username %><br>
-<% end %>
+<% end %><br><br><br>
+
+<%= link_to 'ホームに戻る', memos_path %>

@@ -11,10 +11,12 @@
       <%= form.submit "送信" %>
       </div>
 <% end%>
-
+<br>
       <% @soundboards.each do |soundboard| %>
             <br>
         <%= soundboard.opinion %><br />
             <hr size=#"fff">
-      <% end %> 
+      <% end %><br><br><br>
+
+      <%= link_to 'ホームに戻る', memos_path %> 
 </body>
