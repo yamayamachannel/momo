@@ -32,19 +32,20 @@
   <%= @memo.bank %><br>
   
   <p>
-  <strong>金額を入力してください</strong>
+  <h3>金額と内容を入力し、「収入」か「支出」ボタンを押してください</h3>
+  <h5>例：10000  /   おこづかいとして　→　「収入」</h5>
   </p>
 
   <%= form_with url: {controller: :memos, action: :tasuhiku}, id: :fm do |form| %>
     <div class="field">
-    <%= form.text_field :money %>
+    <%= form.text_field :money %>/
     <%= form.text_field :comment %>
     </div>
     <div class="actions">
-      <%= form.submit:"追加",name:'button1' %>
+      <%= form.submit:"収入",name:'button1' %>
     </div>
     <div class="actions">
-      <%= form.submit:"減少",name:'button2'%>
+      <%= form.submit:"支出",name:'button2'%>
     </div>
   <% end %><br>
 
