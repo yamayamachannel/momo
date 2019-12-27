@@ -23,11 +23,11 @@
           <td><%= link_to '変更', memo, class: 'btn' %></td>
           <td><%= link_to '削除', memo, method: :delete, data: { confirm: '本当に消しますか?' }, class: 'btn' %></td>
         </tr>
-        <% memo.logs.each do |log| %>
-          <%= log.money %> / <%= log.comment %> / <%= log.created_at %><br>
-        <% end %>
      </tbody>
     </table>
+    <% memo.logs.each do |log| %>
+          <%= log.money %> / <%= log.comment %> / <%= log.created_at %><br>
+    <% end %>
     <br>
     <% end %>
  </div>

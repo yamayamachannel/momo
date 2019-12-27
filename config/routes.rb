@@ -9,8 +9,8 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations'
   }
   resources :memos
-  post 'memos/:id/hiku', to: 'memos#hiku'
-  post 'memos/:id/plus', to: 'memos#plus'
+  # post 'memos/:id/hiku', to: 'memos#hiku'
+  # post 'memos/:id/plus', to: 'memos#plus'
   post 'memos/:id/tasuhiku', to: 'memos#tasuhiku'
   root "home#index"
   get 'users', to:'users#index'
