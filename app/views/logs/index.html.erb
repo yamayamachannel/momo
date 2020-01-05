@@ -1,0 +1,16 @@
+<header>
+<h2>履歴</h2>
+</header>
+
+<%= form_tag(logs_path,:method => 'get') do %>
+    <select name="me" id="me">
+        <% @memos.each do |memo| %>
+            <option value="<%= memo.id %>"><%= memo.title %></option>
+        <% end %>
+    </select>
+    <%= submit_tag '決定' %>
+<%end%>
+<br>
+<% @logs.each do |log| %>
+    <%= log.money %> / <%= log.comment %> / <%= log.created_at %><br>
+<% end %> 

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'groups/sanka'
   post 'groups/sanka2'
   get 'groups/taikai'
+  get 'logs', to:'logs#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
