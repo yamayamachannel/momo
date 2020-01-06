@@ -68,72 +68,31 @@ class MemosController < ApplicationController
     end
   end
 
-  # def plus
-  #   @memo = Memo.find(params[:id])
-  #   t=params["money"]
-  #   @memo.bank += t.to_i
-  #   @memo.save
-  #   redirect_to :action => 'show'
-  # end
- 
-  # def hiku
-  #   @memo = Memo.find(params[:id])
-  #   m=params["money"]
-  #   @memo.bank -= m.to_i
-  #   @memo.save
-  #   redirect_to :action => 'show'
-  # end
-
   def tasuhiku
-
+    @memo = Memo.find(params[:id])
+    t=params["money"]
     if params[:button1]
-      @memo = Memo.find(params[:id])      #@memoみたいに感じで@〜を作ってfindでもうひとつ見つけてくる 
-      t=params["money"]
-      #if文
       if t<"0" 
         @memo.errors
       elsif
         @memo.bank += t.to_i
         @memo.save
-        Log.create(money:t.to_i, comment:params["comment"], memo_id:@memo.id)
+        Log.create(money:t.to_i, comment:params["comment"], memo_id:@memo.id, sum:@memo.bank)
       end    
       redirect_to :action => 'show'
     
     elsif params[:button2]
-      @memo = Memo.find(params[:id])
-      m=params["money"]
-      #if文
-      if m<"0"
+      if t<"0"
         @memo.errors
       elsif  
-        @memo.bank -= m.to_i
+        @memo.bank -= t.to_i
         @memo.save
-        Log.create(money:-m.to_i, comment:params["comment"], memo_id:@memo.id)
+        Log.create(minus:t.to_i, comment:params["comment"], memo_id:@memo.id, sum:@memo.bank)
       end
       redirect_to :action => 'show'
     
     end
   end
-
-  def ginko
-    if params[:button1]
-      @memo = Memo.find(params[:id])      #@memoみたいに感じで@〜を作ってfindでもうひとつ見つけてくる 
-      t=params["money"]
-      #if文
-      @memo.bank += t.to_i
-      @memo.save
-      redirect_to :action => 'show'
-    elsif params[:button2]
-      @memo = Memo.find(params[:id])
-      m=params["money"]
-      #if文
-      @memo.bank -= m.to_i
-      @memo.save
-      redirect_to :action => 'show'
-    end
-  end
-
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
