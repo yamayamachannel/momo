@@ -11,19 +11,25 @@
     <%= submit_tag '決定' %>
 <%end%>
 <br>
-<% @logs.each do |log| %>
-    <table>
-        <tr>
+
+    <% if params[:me] =%>
+<table>
+    <tr>
         <th><h3>増加</h3></th>
         <th><h3>減少</h3></th>
         <th><h3>合計</h3></th>
         <th><h3>詳細</h3></th>
-        </tr>
+    </tr>
+    <% @logs.each do |log| %>
         <tr>
-        <td><h3><%= log.money %></h3></td>
-        <td><h3><%= log.money %></h3></td>
-        <td><h3><%= log.sum %></h3></td>
-        <td><h3><%= log.comment %></h3></td>
+            <td><h3><%= log.money %></h3></td>
+            <td><h3><%= log.minus %></h3></td>
+            <td><h3><%= log.sum %></h3></td>
+            <td><h3><%= log.comment %></h3></td>
         </tr>
-        </table>
-<% end %> 
+    <% end %>
+<% else %>
+    <h2>履歴を表示したいものを選んでください</h2>
+<% end %>
+
+</table>

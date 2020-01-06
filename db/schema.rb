@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_06_052450) do
+ActiveRecord::Schema.define(version: 2020_01_06_065345) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_01_06_052450) do
     t.datetime "updated_at", null: false
     t.integer "memo_id"
     t.integer "sum"
+    t.integer "minus"
     t.index ["memo_id"], name: "index_logs_on_memo_id"
   end
 
