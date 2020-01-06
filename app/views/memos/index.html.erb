@@ -25,9 +25,6 @@
         </tr>
      </tbody>
     </table>
-    <% memo.logs.each do |log| %>
-          <%= log.money %> / <%= log.comment %> / <%= log.created_at %><br>
-    <% end %>
     <br>
     <% end %>
  </div>
@@ -45,8 +42,7 @@
     <%= link_to "グループ退会",groups_taikai_path, class: 'btn' %><br>
 
   <% end %>
-    
-  <%# <%= link_to"他のユーザー一覧",users_path, class: 'btn' %>
+  <%= link_to "履歴",logs_path, class: 'btn' %><br>
   <%= link_to "意見箱",soundboards_path, class: 'btn' %><br>
   <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
 

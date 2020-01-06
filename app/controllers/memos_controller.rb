@@ -143,6 +143,6 @@ class MemosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def memo_params
-      params.require(:memo).permit(:title, :bank, :wallet, :top)
+      params.require(:memo).permit(:title, :bank)
     end  
 end
