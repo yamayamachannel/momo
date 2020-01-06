@@ -70,9 +70,8 @@ class MemosController < ApplicationController
 
   def tasuhiku
     @memo = Memo.find(params[:id])
+    t=params["money"]
     if params[:button1]
-      t=params["money"]
-      #if文
       if t<"0" 
         @memo.errors
       elsif
@@ -83,14 +82,12 @@ class MemosController < ApplicationController
       redirect_to :action => 'show'
     
     elsif params[:button2]
-      m=params["money"]
-      #if文
-      if m<"0"
+      if t<"0"
         @memo.errors
       elsif  
-        @memo.bank -= m.to_i
+        @memo.bank -= t.to_i
         @memo.save
-        Log.create(minus:-m.to_i, comment:params["comment"], memo_id:@memo.id, sum:@memo.bank)
+        Log.create(minus:t.to_i, comment:params["comment"], memo_id:@memo.id, sum:@memo.bank)
       end
       redirect_to :action => 'show'
     
