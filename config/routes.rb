@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resource :groups
+  resource :groups do
+    member do
+  post 'remittance_out'
+    end
+  end
+
   get 'home/index'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations'

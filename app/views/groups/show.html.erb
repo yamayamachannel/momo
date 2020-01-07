@@ -1,7 +1,18 @@
 
 
 <h2>グループメンバー一覧</h2><br>
-<% @users.each do |user| %>
+
+<details>
+  <tr><th colspan = "2"><summary><%= @user.username %></summary></th></tr>
+<table>
+  <% @user.memos.each do |memo|%>
+    <tr><th><h3><p><%= memo.title %></p></h3></th>
+    <td><h3><p><%= memo.bank %></p></h3></td></tr>
+  <% end %><br>
+</table>
+</details>  
+
+<% @others.each do |user| %>
 <details>
   <tr><th colspan = "2"><summary><%= user.username %></summary></th></tr>
 <table>
@@ -10,6 +21,29 @@
     <td><h3><p><%= memo.bank %></p></h3></td></tr>
   <% end %><br>
 </table>
+
+<%= form_with url: {controller: "groups", action: "remittance_out"} do |form| %>
+  <%= form.text_field :money %>/
+  <%= form.text_field :comment %>
+  <br>
+
+  <%= form_tag(memos_path,:method => 'get') do %> 
+
+    <select name="mae_out">
+      <% @user.memos.each do |memo| %>
+       <option value="<%= memo.id %>"><%= memo.title %></option>
+     <% end %>
+    </select>
+
+    <select name="saki_out">
+      <% user.memos.each do |memo| %>
+       <option value="<%= memo.id %>"><%= memo.title %></option>
+     <% end %>
+    </select>
+    <%= submit_tag '送金' %>
+  <% end %>
+<% end %>
+
 </details>  
 
     
