@@ -54,7 +54,7 @@
     <%= form_tag(memos_path,:method => 'get') do %>
       
       <select name="saki">
-        <% @memos.each do |memo| %>
+        <% @others.each do |memo| %>
             <option value="<%= memo.id %>"><%= memo.title %></option>
         <% end %>
       </select>
