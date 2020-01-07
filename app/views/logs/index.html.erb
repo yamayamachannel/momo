@@ -18,6 +18,7 @@
         <th><h3>増加</h3></th>
         <th><h3>減少</h3></th>
         <th><h3>合計</h3></th>
+        <th><h3>日付</h3></th>
         <th><h3>詳細</h3></th>
     </tr>
     <% @logs.each do |log| %>
@@ -25,6 +26,7 @@
             <td><h3><%= log.money %></h3></td>
             <td><h3><%= log.minus %></h3></td>
             <td><h3><%= log.sum %></h3></td>
+            <td><h3><%= Date.current.strftime('%Y/%m/%d') %></h3></td>
             <td><h3><%= log.comment %></h3></td>
         </tr>
     <% end %>
