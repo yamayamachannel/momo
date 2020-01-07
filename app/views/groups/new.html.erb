@@ -2,7 +2,7 @@
 
 <h2>グループを作成しましょう！</h2>
 
-<%= form_for @group, url: groups_create_path do |form| %>
+<%= form_for @group, url: groups_path do |form| %>
 <%= form.label :名前 %> <%= form.text_field :name, id: :group_name %>
 <%= form.label :あいことば %> <%= form.text_field :aiko, id: :group_aiko %>
 <%= form.submit "グループ作成"%>

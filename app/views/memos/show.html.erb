@@ -55,7 +55,7 @@
     <summary><strong>金額の移動</strong></summary>
     <br>
     <%= form_with url: {controller: "memos", action: "remittance"} do |form| %>
-      <%= form.text_field :money %>
+      <%= form.text_field :money %>/
       <%= form.text_field :comment %>
       <br>
       <%= form_tag(memos_path,:method => 'get') do %> 
