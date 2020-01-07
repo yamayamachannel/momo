@@ -8,6 +8,7 @@
 <h3>MENU</h3>
   <%= link_to"top",memos_path, class: 'btn' %><br>
   <%= link_to"他のユーザー一覧",users_path, class: 'btn' %><br>
+  <%= link_to "履歴",logs_path, class: 'btn' %><br>
   <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
 </div>
 
@@ -22,7 +23,6 @@
   <div class="actions">
     <%= form.submit:決定 %>
   </div>
-
 <% end%>
 
 <br><br><br>
@@ -43,12 +43,25 @@
     </div>
     <div class="actions">
       <%= form.submit:"収入",name:'button1' %>
-    </div>
-    <div class="actions">
+      <br>
       <%= form.submit:"支出",name:'button2'%>
     </div>
   <% end %><br>
 
+  <h2>金額の移動</h2>
+  <%= form_with url: {controller: "memos", action: "remittance"} do |form| %>
+    <%= form.text_field :money %>
+    <%= form_tag(memos_path,:method => 'get') do %>
+      
+      <select name="saki">
+        <% @memos.each do |memo| %>
+            <option value="<%= memo.id %>"><%= memo.title %></option>
+        <% end %>
+      </select>
+      
+      <%= submit_tag '送金' %>
+    <%end%>
+  <% end %>
   <%= link_to 'ホームに戻る', memos_path %>
 </body>
 </html> 
