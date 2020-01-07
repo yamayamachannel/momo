@@ -15,6 +15,7 @@ class GroupsController < ApplicationController
     @user = current_user
     @group = Group.find(@user.group_id)
     @users = User.where(group_id: @group.id)
+    @others = User.where(group_id: @group.id).where.not(id: @user.id)
   end
 
   def taikai
@@ -75,6 +76,24 @@ class GroupsController < ApplicationController
   end
 
   def destroy
+  end
+
+  def remittance_out
+    @user = current_user
+    @memo = Memo.find(params[:mae_out])
+    @saki = Memo.find(params[:saki_out])
+    t=params["money"]
+    if t<"0"
+      @memo.errors
+    elsif  
+      @memo.bank -= t.to_i
+      @memo.save
+      Log.create(minus:t.to_i, comment:params["comment"], memo_id:@memo.id, sum:@memo.bank)
+      @saki.bank += t.to_i
+      @saki.save
+      Log.create(money:t.to_i, comment: @user.username+"さんの"+@memo.title+"から送金されました", memo_id:@saki.id, sum:@saki.bank)
+    end
+    redirect_to :action => 'show'
   end
 
   private
