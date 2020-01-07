@@ -16,6 +16,8 @@ class MemosController < ApplicationController
   # GET /memos/1
   # GET /memos/1.json
   def show
+    @user = current_user
+    @memos = Memo.where(user: @user)
   end
 
   # GET /memos/new
@@ -72,15 +74,13 @@ class MemosController < ApplicationController
     @memo = Memo.find(params[:id])
     t=params["money"]
     if params[:button1]
-      if t<"0" 
+      if t<"0"
         @memo.errors
-      elsif
+      elsif  
         @memo.bank += t.to_i
         @memo.save
         Log.create(money:t.to_i, comment:params["comment"], memo_id:@memo.id, sum:@memo.bank)
-      end    
-      redirect_to :action => 'show'
-    
+      end
     elsif params[:button2]
       if t<"0"
         @memo.errors
@@ -89,10 +89,27 @@ class MemosController < ApplicationController
         @memo.save
         Log.create(minus:t.to_i, comment:params["comment"], memo_id:@memo.id, sum:@memo.bank)
       end
-      redirect_to :action => 'show'
-    
     end
+    redirect_to :action => 'show'
   end
+
+  def remittance
+    @memo = Memo.find(params[:id])
+    @saki = Memo.find(params[:saki])
+    t=params["money"]
+    if t<"0"
+      @memo.errors
+    elsif  
+      @memo.bank -= t.to_i
+      @memo.save
+      Log.create(minus:t.to_i, comment:params["comment"], memo_id:@memo.id, sum:@memo.bank)
+      @saki.bank += t.to_i
+      @saki.save
+      Log.create(money:t.to_i, comment:params["comment"], memo_id:@saki.id, sum:@saki.bank)
+    end
+    redirect_to :action => 'show'
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
