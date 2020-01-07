@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'groups/new'
-  get 'groups/create'
-  get 'groups/edit'
-  get 'groups/update'
-  get 'groups/destroy'
+  resource :groups
   get 'home/index'
   devise_for :users, :controllers => {
     :registrations => 'users/registrations'
@@ -17,9 +13,6 @@ Rails.application.routes.draw do
   get 'users', to:'users#index'
   get 'soundboards', to:'soundboards#new'
   post 'soundboards' => 'soundboards#create'
-  get 'groups/new', to:'groups#new'
-  post 'groups/create', to:'groups#create'
-  get 'groups/show'
   get 'groups/sanka'
   post 'groups/sanka2'
   get 'groups/taikai'
