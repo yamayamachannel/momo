@@ -2,13 +2,17 @@
 
 <h2>グループメンバー一覧</h2><br>
 <% @users.each do |user| %>
+<details>
+  <tr><th colspan = "2"><summary><%= user.username %></summary></th></tr>
 <table>
-  <tr><th colspan = "2"><%= user.username %></th></tr>
   <% user.memos.each do |memo|%>
-    <tr><th><h3><%= memo.title %></h3></th>
-    <td><h3><%= memo.bank %></h3></td></tr>
+    <tr><th><h3><p><%= memo.title %></p></h3></th>
+    <td><h3><p><%= memo.bank %></p></h3></td></tr>
   <% end %><br>
-</table>    
+</table>
+</details>  
+
+    
 <% end %><br><br><br>  
 
 <%= link_to 'ホームに戻る', memos_path %>
