@@ -18,6 +18,7 @@ class MemosController < ApplicationController
   def show
     @user = current_user
     @memos = Memo.where(user: @user)
+    @others =Memo.where(user: @user).where.not(id: params[:id]) 
   end
 
   # GET /memos/new

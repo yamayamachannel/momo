@@ -8,9 +8,9 @@
 
 <div id="mainContents">
 
-    <% @memos.each do |memo| %>
-      <table border=solid >
-      <tbody id="table1">
+  <% @memos.each do |memo| %>
+    <table border=solid >
+      <tbody>
         <tr>
           <th bgcolor="liteblue" colspan="3" ><%= memo.title %></th>
         </tr>
@@ -22,16 +22,15 @@
           <td><%= link_to '変更', memo, class: 'btn' %></td>
           <td><%= link_to '削除', memo, method: :delete, data: { confirm: '本当に消しますか?' }, class: 'btn' %></td>
         </tr>
-     </tbody>
+      </tbody>
     </table>
-    <br>
-    <% end %>
- </div>
-
-      
+  <br>
+  <% end %>
+</div>
 
 <div id="rightMenu">
-<h3>MENU</h3>
+
+  <h3>MENU</h3>
   <%= link_to"top",memos_path, class: 'btn' %><br>
   <% if current_user.group_id.nil? =%>                           <!--グループに入ってないとき-->
     <%= link_to "グループ作成",groups_new_path, class: 'btn' %><br>
@@ -39,13 +38,11 @@
   <% else %>                                                     <!--グループに入っているとき-->
     <%= link_to "グループメンバー一覧",groups_show_path, class: 'btn' %><br>
     <%= link_to "グループ退会",groups_taikai_path, class: 'btn' %><br>
-
   <% end %>
   <%= link_to "履歴",logs_path, class: 'btn' %><br>
   <%= link_to "意見箱",soundboards_path, class: 'btn' %><br>
   <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
 </div>
 
- </body>
-   
+</body>
 </html>    
