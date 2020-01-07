@@ -106,7 +106,7 @@ class MemosController < ApplicationController
       Log.create(minus:t.to_i, comment:params["comment"], memo_id:@memo.id, sum:@memo.bank)
       @saki.bank += t.to_i
       @saki.save
-      Log.create(money:t.to_i, comment:params["comment"], memo_id:@saki.id, sum:@saki.bank)
+      Log.create(money:t.to_i, comment: @memo.title+"から送金されました", memo_id:@saki.id, sum:@saki.bank)
     end
     redirect_to :action => 'show'
   end
