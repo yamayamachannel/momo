@@ -33,7 +33,7 @@ class GroupsController < ApplicationController
 
     if @group.nil?
       respond_to do |format|
-        format.html { redirect_to new_groups_path, notice: '***グループが存在しません***' }
+        format.html { redirect_to groups_sanka_path, notice: '***グループが存在しません***' }
      end 
       # redirect_to action: :sanka
     else
@@ -46,7 +46,7 @@ class GroupsController < ApplicationController
       else                               # 合言葉が一致しなかった時
         # redirect_to action: :sanka
         respond_to do |format|
-           format.html { redirect_to new_groups_path, notice: '***あいことばが一致しません***' }
+           format.html { redirect_to groups_sanka_path, notice: '***あいことばが一致しません***' }
         end 
       end
     end   
