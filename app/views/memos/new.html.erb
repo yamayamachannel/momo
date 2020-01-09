@@ -4,7 +4,6 @@
 <div id="rightMenu">
 <h3>MENU</h3>
   <%= link_to"top",memos_path, class: 'btn' %><br>
-  <%= link_to"他のユーザー一覧",users_path, class: 'btn' %><br>
   <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
 </div>
 <%= render 'form', memo: @memo %>
