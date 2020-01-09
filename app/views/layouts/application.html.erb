@@ -4,17 +4,17 @@
 
 <html>
   <head>
-    <title>まねいじゃあ</title>
+    <title>Moneyger</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <h1><%= link_to 'Moneyger', memos_path, class: 'head' %></h1>
-
+    <h1>
+      <%= link_to image_tag('Moneyger.png',size:'450x100'),memos_path,class: 'Moneyger' %>
+    </h1>
     <%= yield %>
   </body>
 </html>

@@ -23,8 +23,8 @@
 </table>
 
 <%= form_with url: {controller: "groups", action: "remittance_out"} do |form| %>
-  <%= form.text_field :money %>/
-  <%= form.text_field :comment %>
+  <%= form.text_field :money,:placeholder => "送金する金額を入力してください。" %>/
+  <%= form.text_field :comment,:placeholder => "詳細を入力してください。" %>
   <br>
 
   <%= form_tag(memos_path,:method => 'get') do %> 
