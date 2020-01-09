@@ -34,12 +34,13 @@
        <option value="<%= memo.id %>"><%= memo.title %></option>
      <% end %>
     </select>
-
+    から
     <select name="saki_out">
       <% user.memos.each do |memo| %>
        <option value="<%= memo.id %>"><%= memo.title %></option>
      <% end %>
     </select>
+    へ
     <%= submit_tag '送金' %>
   <% end %>
 <% end %>
