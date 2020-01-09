@@ -5,30 +5,12 @@ h1 {
 	text-shadow: 0 0 2px white;
 }
 
-.head{
+.Moneyger{
   text-decoration: none;
-  color: royalblue;
-}
-
-.head:hover{
-  color:blue;
-}
-
-h1:before {
-	content: "";
-	position: absolute;
-	background: #9de5ff;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	top: 50%;
-	/* border: dashed 1px white; */
-	left: -15px;
-	-moz-transform: translateY(-50%);
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-	z-index: -1;
+  position: fixed;
+  top: 0px;
+  width: 10px;
+  height: 20px;
 }
 
 table {
@@ -156,6 +138,7 @@ body {
   background-color: #fff;
   color: #333;
   margin: 33px;
+  padding-top: 60px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -228,9 +211,33 @@ a.cp_btn {
 	text-decoration: none;
 	color: rgb(53, 172, 202);
 	border: 2px solid rgb(0, 117, 212);
-	transition: .4s;
+  transition: .4s;
+  font-size: 50px;
+  font-weight: bold;
+  animation-name: fadein;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+@keyframes fadein {
+from{
+  opacity: 0;
+  transform: translateY(20px);
+}
+to{
+  opacity: 1;
+  transform: translateY(0);
+}
 }
 a.cp_btn:hover {
 	background: rgb(64, 224, 236);
 	color: #fff;
+}
+
+summary{
+  color:black;
+  font-size: 15px;
+}
+summary:hover{
+  color:blue;
+  cursor: pointer;
 }

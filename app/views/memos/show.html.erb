@@ -38,8 +38,8 @@
 
     <%= form_with url: {controller: :memos, action: :tasuhiku}, id: :fm do |form| %>
       <div class="field">
-        <%= form.text_field :money %>/
-        <%= form.text_field :comment %>
+        <%= form.text_field :money ,:placeholder => "金額を入力してください。" %>/
+        <%= form.text_field :comment,:placeholder => "詳細を入力してください。" %>
       </div>
       <div class="actions">
         <%= form.submit:"収入",name:'button1' %>
@@ -55,8 +55,8 @@
     <summary><strong>金額の移動</strong></summary>
     <br>
     <%= form_with url: {controller: "memos", action: "remittance"} do |form| %>
-      <%= form.text_field :money %>/
-      <%= form.text_field :comment %>
+      <%= form.text_field :money,:placeholder => "移動する金額を入力してください。"%>/
+      <%= form.text_field :comment,:placeholder => "詳細を入力してください。"%>
       <br>
       <%= form_tag(memos_path,:method => 'get') do %> 
         <select name="saki">
