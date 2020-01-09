@@ -12,9 +12,11 @@
   </head>
 
   <body>
-    <h1>
-      <%= link_to image_tag('Moneyger.png',size:'450x100'),memos_path,class: 'Moneyger' %>
-    </h1>
+      <div id="Moneyger">
+        <div id="Moneyger-bk">
+            <%= link_to image_tag('Moneyger.png',size:'450x100'),memos_path %>
+        </div>
+      </div>
     <%= yield %>
   </body>
 </html>
