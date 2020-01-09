@@ -11,7 +11,7 @@
 <% end %>
 <br>
 <% if params[:me] =%>
-    <div class="cp_box">
+    
         <table align="center" weigh = "100%">
             <tr>
                 <th class="a"><h3>増加</h3></th>
@@ -30,24 +30,19 @@
                 </tr>
             <% end %>
         </table>
-        <% if @logs_other.nil? %>
-        <% else %>
-        <input id="cp00" type="checkbox"><label for="cp00">続きを読む</label>
-        <div class="cp_container">
-            <table align="center">
-                <% @logs_others.each do |log| %>
-                    <tr>
-                        <td class="a"><h3><%= log.money %></h3></td>
-                        <td class="b"><h3><%= log.minus %></h3></td>
-                        <td class="c"><h3><%= log.sum %></h3></td>
-                        <td class="d"><h3><%= Date.current.strftime('%Y/%m/%d') %></h3></td>
-                        <td class="e"><h3><%= log.comment %></h3></td>
-                    </tr>
-                <% end %>
-            </table>
-        </div>
-        <% end %>
-    </div>
+        
+                <table align="center">
+                    <% @logs_others.each do |log| %>
+                        <tr>
+                            <td class="a"><h3><%= log.money %></h3></td>
+                            <td class="b"><h3><%= log.minus %></h3></td>
+                            <td class="c"><h3><%= log.sum %></h3></td>
+                            <td class="d"><h3><%= Date.current.strftime('%Y/%m/%d') %></h3></td>
+                            <td class="e"><h3><%= log.comment %></h3></td>
+                        </tr>
+                    <% end %>
+                </table>
+    
 <% else %>
-        <h2>履歴を表示したいものを選んでください</h2>
-    <% end %>
+    <h2>履歴を表示したいものを選んでください</h2>
+<% end %>
