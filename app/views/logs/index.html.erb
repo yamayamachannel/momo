@@ -30,6 +30,7 @@
                 </tr>
             <% end %>
         </table>
+        <% if @logs != @logs_5 %>
         <input id="cp00" type="checkbox">
         <label for="cp00">続きを読む</label>
         <div class="cp_container">
@@ -45,6 +46,7 @@
                 <% end %>
             </table>
         </div>
+        <% end %>
     </div>
 <% else %>
     <h2>履歴を表示したいものを選んでください</h2>
