@@ -25,27 +25,27 @@
                     <td><h3><%= log.money %></h3></td>
                     <td><h3><%= log.minus %></h3></td>
                     <td><h3><%= log.sum %></h3></td>
-                    <td><h3><%= Date.current.strftime('%Y/%m/%d') %></h3></td>
+                    <td><h3><%= log.created_at.to_s(:datetime_jp) %></h3></td>
                     <td><h3><%= log.comment %></h3></td>
                 </tr>
             <% end %>
         </table>
         <% if @logs != @logs_5 %>
-        <input id="cp00" type="checkbox">
-        <label for="cp00">続きを読む</label>
-        <div class="cp_container">
-            <table align="center">
-                <% @logs_others.each do |log| %>
-                    <tr>
-                        <td class="a"><h3><%= log.money %></h3></td>
-                        <td class="b"><h3><%= log.minus %></h3></td>
-                        <td class="c"><h3><%= log.sum %></h3></td>
-                        <td class="d"><h3><%= Date.current.strftime('%Y/%m/%d') %></h3></td>
-                        <td class="e"><h3><%= log.comment %></h3></td>
-                    </tr>
-                <% end %>
-            </table>
-        </div>
+            <input id="cp00" type="checkbox">
+            <label for="cp00">続きを読む</label>
+            <div class="cp_container">
+                <table align="center">
+                    <% @logs_others.each do |log| %>
+                        <tr>
+                            <td class="a"><h3><%= log.money %></h3></td>
+                            <td class="b"><h3><%= log.minus %></h3></td>
+                            <td class="c"><h3><%= log.sum %></h3></td>
+                            <td class="d"><h3><%= Date.current.strftime('%Y/%m/%d') %></h3></td>
+                            <td class="e"><h3><%= log.comment %></h3></td>
+                        </tr>
+                    <% end %>
+                </table>
+            </div>
         <% end %>
     </div>
 <% else %>
