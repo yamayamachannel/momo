@@ -141,11 +141,17 @@ table tr:hover {
 
 #rightMenu{
   float:right;
-  width:200px;
+  width:30%;
 }
-#mainContents{
+#leftContents{
   float:left;
-  width:560;
+  width:30%;
+
+}
+#centerContents{
+  float:center;
+  width:40%;
+  align:center;
 }
 
 body {
