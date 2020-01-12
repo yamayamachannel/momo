@@ -13,6 +13,9 @@
 <% if params[:me] =%>
     <div class="cp_box">
         <table align="center" weigh = "100%">
+        <% if @logs_5.empty? %>
+            <h2>正しい場所を選択してください</h2>
+        <%else%>
             <tr>
                 <th class="a"><h3>増加</h3></th>
                 <th class="b"><h3>減少</h3></th>
@@ -29,6 +32,7 @@
                     <td><h3><%= log.comment %></h3></td>
                 </tr>
             <% end %>
+        <% end %>
         </table>
         <% if @logs != @logs_5 %>
             <input id="cp00" type="checkbox">
