@@ -6,6 +6,10 @@ h1 {
 }
 
 div#Moneyger{
+  margin-left: -33px;
+  padding-left: 33px;
+  background-position: 0% 0%;
+  background-color:#fff;
   text-decoration: none;
   position: fixed;
   top: 0px;
@@ -13,21 +17,6 @@ div#Moneyger{
   height: 100px;
   z-index:2;
 }
-
-div#Moneyger-bk{
-  margin-left: -33px;
-  padding-left: 33px;
-  background-position: 0% 0%;
-  background-color:#fff;
-  height: 100px; 
-  width:100%;  
-  z-index:1;
-}
-div#m-header{
-  height: 100%;
-  width: 450px;
-}
-
 table {
   width: auto;
   border-spacing: 0;
