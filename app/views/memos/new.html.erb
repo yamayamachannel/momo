@@ -1,11 +1,6 @@
 
-<h2>新規登録</h2>
-</header>
-<div id="rightMenu">
-<h3>MENU</h3>
-  <%= link_to"top",memos_path, class: 'btn' %><br>
-  <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
-</div>
+<h4>新規登録</h4>
+
 <%= render 'form', memo: @memo %>
 
 <%= link_to 'ホームに戻る', memos_path %>

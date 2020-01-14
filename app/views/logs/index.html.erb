@@ -1,6 +1,4 @@
-<header>
 <h2>履歴</h2>
-</header>
 <%= form_tag(logs_path,:method => 'get') do %>
     <select name="me" id="me">
         <% @memos.each do |memo| %>

@@ -11,7 +11,7 @@
 
 <div id="leftContents">
   <% @memos.each do |memo| %>
-    <table class="table table-bordered">
+    <table class="table table-bordered table-hover">
       <thead>
         <tr>
           <th colspan="2"><%= memo.title %></th>
@@ -31,7 +31,9 @@
   <br>
   <% end %>
 </div>
-<%= link_to '新しい金額場所の追加', new_memo_path, class: 'btn' %>
+<%= link_to '+', new_memo_path, class: 'btn btn-primary rounded-circle p-0', style: 'width:2rem;height:2rem;' %>
+
+
 
 <div id="rightMenu">
 
