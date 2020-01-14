@@ -1,24 +1,15 @@
-# README
+#  Moneyger
+「今月いくら使ったか知りたい」「息子の収支状況を把握したい」
+Moneygerはそんなニーズに応えます！
+家計簿＋共有をテーマとしメンバーを作りお金の移動を可能にしました。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#　KIT〜と
+メンバー
+大和祐介　プロダクトオーナー
+三原和也　スクラムマスター
+鶴崎智大　開発チーム
+待鳥良明　開発チーム
+宮下快斗　開発チーム
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# デプロイ先
+https://moneyger.kitaq.link
