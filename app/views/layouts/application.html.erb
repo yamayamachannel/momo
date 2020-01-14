@@ -12,9 +12,8 @@
   </head>
 
   <body>
-      <div id="Moneyger">
-            <%= link_to image_tag('Moneyger.png',size:'450x100'),memos_path %>
-      </div>
+    <%= render 'layouts/header' %>
+    <div class="container">
     <%= yield %>
   </body>
 </html>
