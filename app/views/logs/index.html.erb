@@ -15,21 +15,21 @@
         <h2>正しい場所を選択してください</h2>
     <%else%>
         <div class="cp_box">
-            <table align="center" weigh = "100%">
+            <table class="table">
                 <tr>
-                    <th class="a"><h3>増加</h3></th>
-                    <th class="b"><h3>減少</h3></th>
-                    <th class="c"><h3>合計</h3></th>
-                    <th class="d"><h3>日付</h3></th>
-                    <th class="e"><h3>詳細</h3></th>
+                    <th class="a">増加</th>
+                    <th class="b">減少</th>
+                    <th class="c">合計</th>
+                    <th class="d">日付</th>
+                    <th class="e">詳細</th>
                 </tr>
                 <% @logs_5.each do |log| %>
                     <tr>
-                        <td><h3><%= log.money %></h3></td>
-                        <td><h3><%= log.minus %></h3></td>
-                        <td><h3><%= log.sum %></h3></td>
-                        <td><h3><%= log.created_at.to_s(:datetime_jp) %></h3></td>
-                        <td><h3><%= log.comment %></h3></td>
+                        <td><%= log.money %>円</td>
+                        <td><%= log.minus %></td>
+                        <td><%= log.sum %></td>
+                        <td><%= log.created_at.to_s(:datetime_jp) %></td>
+                        <td><%= log.comment %></td>
                     </tr>
                 <% end %>
             </table>
@@ -40,11 +40,11 @@
                     <table align="center">
                         <% @logs_others.each do |log| %>
                             <tr>
-                                <td class="a"><h3><%= log.money %></h3></td>
-                                <td class="b"><h3><%= log.minus %></h3></td>
-                                <td class="c"><h3><%= log.sum %></h3></td>
-                                <td class="d"><h3><%= Date.current.strftime('%Y/%m/%d') %></h3></td>
-                                <td class="e"><h3><%= log.comment %></h3></td>
+                                <td class="a"><%= log.money %></td>
+                                <td class="b"><%= log.minus %></td>
+                                <td class="c"><%= log.sum %></td>
+                                <td class="d"><%= Date.current.strftime('%Y/%m/%d') %></td>
+                                <td class="e"><%= log.comment %></td>
                             </tr>
                         <% end %>
                     </table>
