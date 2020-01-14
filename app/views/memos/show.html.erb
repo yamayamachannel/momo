@@ -2,73 +2,63 @@
 
 <html>
   <meta charset = "utf-8">
-<body>
-  <div id="rightMenu">
-    <h3>MENU</h3>
-    <%= link_to"top",memos_path, class: 'btn' %><br>
-    <%= link_to "履歴",logs_path, class: 'btn' %><br>
-    <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
-  </div>
-  
-  <details>
-    <summary><strong>名前の変更</strong></summary>
-    <br>
-    <strong>現在の名前:</strong>
-    <%= @memo.title %><br>
-    <%= form_with(model: @memo, local: true) do |form| %>
-      <div class="field">
-        <%= form.label :名前 %>
-        <%= form.text_field :title %>  
-      </div>
-      <div class="actions">
-        <%= form.submit:決定 %>
-      </div>
-    <% end %>
-  </details>
-  <br><br>
-  <details>
-    <summary><strong>金額の変更</strong></summary>
-    <br>
-    <strong>現在の金額:</strong>
-    <%= @memo.bank %><br>
-    <p>
-      <h3>金額と内容を入力し、「収入」か「支出」ボタンを押してください</h3>
-      <h5>例：10000  /   おこづかいとして　→　「収入」</h5>
-    </p>
-
-    <%= form_with url: {controller: :memos, action: :tasuhiku}, id: :fm do |form| %>
-      <div class="field">
-        <%= form.text_field :money ,:placeholder => "金額を入力してください。" %>/
-        <%= form.text_field :comment,:placeholder => "詳細を入力してください。" %>
-      </div>
-      <div class="actions">
-        <%= form.submit:"収入",name:'button1' %>
-        <br><br>
-        <%= form.submit:"支出",name:'button2'%>
-      </div>
-    <% end %><br>
-  </details>
-
-  <br><br>
-  
-  <details>
-    <summary><strong>金額の移動</strong></summary>
-    <br>
-    <%= form_with url: {controller: "memos", action: "remittance"} do |form| %>
-      <%= form.text_field :money,:placeholder => "移動する金額を入力してください。"%>/
-      <%= form.text_field :comment,:placeholder => "詳細を入力してください。"%>
+  <body>
+    <details>
+      <summary><strong>名前の変更</strong></summary>
       <br>
-      <%= form_tag(memos_path,:method => 'get') do %> 
-        <select name="saki">
-          <% @others.each do |memo| %>
-            <option value="<%= memo.id %>"><%= memo.title %></option>
-          <% end %>
-        </select>
-        <%= submit_tag '送金' %>
+      <strong>現在の名前:</strong>
+      <%= @memo.title %><br>
+      <%= form_with(model: @memo, local: true) do |form| %>
+        <div class="field">
+          <%= form.label :名前 %>
+          <%= form.text_field :title %>  
+        </div>
+        <div class="actions">
+          <%= form.submit:決定 %>
+        </div>
       <% end %>
-    <% end %>
-  </details>
+    </details>
   <br><br>
-  <%= link_to 'ホームに戻る', memos_path %>
-</body>
+    <details>
+      <summary><strong>金額の変更</strong></summary>
+      <br>
+      <strong>現在の金額:</strong>
+      <%= @memo.bank %><br>
+      <p>
+        <h3>金額と内容を入力し、「収入」か「支出」ボタンを押してください</h3>
+        <h5>例：10000  /   おこづかいとして　→　「収入」</h5>
+      </p>
+      <%= form_with url: {controller: :memos, action: :tasuhiku}, id: :fm do |form| %>
+        <div class="field">
+          <%= form.text_field :money ,:placeholder => "金額を入力してください。" %>/
+          <%= form.text_field :comment,:placeholder => "詳細を入力してください。" %>
+        </div>
+        <div class="actions">
+          <%= form.submit:"収入",name:'button1' %>
+          <br><br>
+          <%= form.submit:"支出",name:'button2'%>
+        </div>
+      <% end %><br>
+    </details>
+    <br><br>
+    <details>
+      <summary><strong>金額の移動</strong></summary>
+      <br>
+      <%= form_with url: {controller: "memos", action: "remittance"} do |form| %>
+        <%= form.text_field :money,:placeholder => "移動する金額を入力してください。"%>/
+        <%= form.text_field :comment,:placeholder => "詳細を入力してください。"%>
+        <br>
+        <%= form_tag(memos_path,:method => 'get') do %> 
+          <select name="saki">
+            <% @others.each do |memo| %>
+              <option value="<%= memo.id %>"><%= memo.title %></option>
+            <% end %>
+          </select>
+          <%= submit_tag '送金' %>
+        <% end %>
+      <% end %>
+    </details>
+    <br><br>
+    <%= link_to 'ホームに戻る', memos_path %>
+  </body>
 </html> 

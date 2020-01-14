@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
+    root :to => "devise/sessions#new"
   end
 
   resources :memos
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
   post 'memos/:id/tasu', to: 'memos#tasu'
   post 'memos/:id/remittance', to: 'memos#remittance'
   post 'memos/:id/tasuhiku', to: 'memos#tasuhiku'
-  root "home#index"
   get 'users', to:'users#index'
   get 'soundboards', to:'soundboards#new'
   post 'soundboards' => 'soundboards#create'
