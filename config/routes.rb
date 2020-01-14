@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   end
 
   resources :memos
-  post 'memos/:id/hiku', to: 'memos#hiku'
-  post 'memos/:id/tasu', to: 'memos#tasu'
   post 'memos/:id/remittance', to: 'memos#remittance'
   post 'memos/:id/tasuhiku', to: 'memos#tasuhiku'
   get 'users', to:'users#index'
