@@ -3,12 +3,6 @@
 <html>
   <meta charset = "utf-8">
 <body>
-  <div id="rightMenu">
-    <h3>MENU</h3>
-    <%= link_to"top",memos_path, class: 'btn' %><br>
-    <%= link_to "履歴",logs_path, class: 'btn' %><br>
-    <%= link_to "ログアウト", destroy_user_session_path, method: "delete", class: 'btn' %><br>
-  </div>
   
   <details>
     <summary><strong>名前の変更</strong></summary>
@@ -32,7 +26,7 @@
     <strong>現在の金額:</strong>
     <%= @memo.bank %><br>
     <p>
-      <h3>金額と内容を入力し、「収入」か「支出」ボタンを押してください</h3>
+      <h5>金額と内容を入力し、「収入」か「支出」ボタンを押してください</h5>
       <h5>例：10000  /   おこづかいとして　→　「収入」</h5>
     </p>
 

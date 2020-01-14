@@ -23,9 +23,9 @@
                 </tr>
                 <% @logs_5.each do |log| %>
                     <tr>
-                        <td><%= log.money %>円</td>
+                        <td><%= log.money %></td>
                         <td><%= log.minus %></td>
-                        <td><%= log.sum %></td>
+                        <td><%= log.sum %>円</td>
                         <td><%= log.created_at.to_s(:datetime_jp) %></td>
                         <td><%= log.comment %></td>
                     </tr>
@@ -41,7 +41,7 @@
                                 <td class="a"><%= log.money %></td>
                                 <td class="b"><%= log.minus %></td>
                                 <td class="c"><%= log.sum %></td>
-                                <td class="d"><%= Date.current.strftime('%Y/%m/%d') %></td>
+                                <td class="d"><%= Date.current.strftime('%Y/%m/%dああああああ') %></td>
                                 <td class="e"><%= log.comment %></td>
                             </tr>
                         <% end %>
