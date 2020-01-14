@@ -1,38 +1,33 @@
 <div class="row">
-<div class="col-2"></div>
-<div class="col-6">
+  <div class="col-2"></div>
+  <div class="col-6">
+    <header>
+      <h2>ようこそ、<%= current_user.username %>さん</h2>
+      <% if !current_user.group_id.nil? %>
+        <div class="alert alert-primary"><b><%= @group.name %></b> グループに参加中</div>
+      <% end %>
+    </header>
 
-<h2>ようこそ、<%= current_user.username %>さん</h2>
-<% if !current_user.group_id.nil? %>
-  <div class="alert alert-primary"><b><%= @group.name %></b> グループに参加中</div>
-<% end %>
-</header>
-
-
-<div id="leftContents">
-  <% @memos.each do |memo| %>
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th colspan="2"><%= memo.title %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>残金</td>
-          <th><%= memo.bank %></th>
-        </tr>
-        <tr>
-          <td><%= link_to '変更', memo, class: 'btn' %></td>
-          <td><%= link_to '削除', memo, method: :delete, data: { confirm: '本当に消しますか?' }, class: 'btn' %></td>
-        </tr>
-      </tbody>
-    </table>
-  <br>
-  <% end %>
-</div>
-<%= link_to '+', new_memo_path, class: 'btn btn-primary rounded-circle p-0', style: 'width:2rem;height:2rem;' %>
-
-</div>
-</div> 
+    <% @memos.each do |memo| %>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th colspan="2"><%= memo.title %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>残金</td>
+            <th><%= memo.bank %></th>
+          </tr>
+          <tr>
+            <td><%= link_to '変更', memo, class: 'btn' %></td>
+            <td><%= link_to '削除', memo, method: :delete, data: { confirm: '本当に消しますか?' }, class: 'btn' %></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    <% end %>
+  </div>
+  <%= link_to '+', new_memo_path, class: 'btn btn-primary rounded-circle p-0', style: 'width:2rem;height:2rem;' %>
 </div>
