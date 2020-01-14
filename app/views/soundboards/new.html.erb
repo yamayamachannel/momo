@@ -5,7 +5,7 @@
 <h2>意見箱</h2>
 <%= form_with url:soundboards_path ,local: true do |form| %>
       <div class="field">
-     <%= form.text_field :opinion %>
+     <%= form.text_area :opinion,:size=>"60x10" %>
      </div>
      <div class="actions">
       <%= form.submit "送信" %>
