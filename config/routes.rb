@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => {
     :registrations => 'users/registrations'
   }
+
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   resources :memos
   post 'memos/:id/hiku', to: 'memos#hiku'
   post 'memos/:id/tasu', to: 'memos#tasu'
