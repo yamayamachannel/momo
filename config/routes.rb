@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'users', to:'users#index'
   get 'soundboards', to:'soundboards#new'
   post 'soundboards' => 'soundboards#create'
+  get 'soundboards/show'
   get 'groups/sanka'
   post 'groups/sanka2'
   get 'groups/taikai'
