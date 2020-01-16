@@ -15,21 +15,19 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/logs">履歴</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a href="/groups" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">グループ(未参加)</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/groups/new">グループ作成</a>
-                            <a class="dropdown-item" href="/groups/sanka">グループ参加</a>
-                            </div><!-- ./dropdown-menu -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/groups/new">グループ作成</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logs">グループ参加</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a href="" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">MENU</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="soundboards">意見箱</a>
-                                <a class="dropdown-item" href="/users/sign_out">ログアウト</a>
-                            </div><!-- ./dropdown-menu -->
+                    <li class="nav-item">
+                            <a class="nav-link" href="soundboards">意見箱</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/sign_out">ログアウト</a>
                         </li>
                     </ul>
                 <% else %>
@@ -37,22 +35,20 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/logs">履歴</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a href="" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">グループ(参加中)</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="groups">メンバー一覧</a>
-                                <a class="dropdown-item" href="/groups/taikai">退会</a>
-                            </div><!-- ./dropdown-menu -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="groups">メンバー一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/groups/taikai">退会</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a href="" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" id="navbarDropdownMenuLink" aria-haspopup="true" aria-expanded="false">MENU</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="soundboards">意見箱</a>
-                                <a class="dropdown-item" href="/users/sign_out">ログアウト</a>
-                            </div><!-- ./dropdown-menu -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="soundboards">意見箱</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/users/sign_out">ログアウト</a>
+                        </li
                     </ul>  
                 <% end %>  
             <% else %>
