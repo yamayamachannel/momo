@@ -8,6 +8,10 @@ class SoundboardsController < ApplicationController
     def edit
     end
 
+    def show
+        @soundboards = Soundboard.all
+    end
+
 
     def create
         @soundboard = Soundboard.new(soundboard_params)
