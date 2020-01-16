@@ -1,26 +1,23 @@
 
 
 <h2>グループメンバー一覧</h2><br>
-<div id="leftContents">
   <tr><th colspan = "2"><summary><%= @user.username %></summary></th></tr>
-  <table>
+  <table class="table table-bordered table-hover">
     <% @user.memos.each do |memo|%>
       <tr><th><h3><%= memo.title %></p></h3></th>
-      <td><h3><%= memo.bank %></p></h3></td></tr>
+      <td><h3><%= memo.bank %>円</p></h3></td></tr>
     <% end %><br>
   </table>
-</div>
 
-<div id="leftContents">
   <% @others.each do |user| %>
     <br>
     <details>
       <tr><th colspan = "2"><summary><%= user.username %></summary></th></tr>
-      <table>
+      <table class="table table-bordered table-hover">
         <% user.memos.each do |memo|%>
           <tr>
             <th><h3><p><%= memo.title %></p></h3></th>
-            <td><h3><p><%= memo.bank %></p></h3></td>
+            <td><h3><p><%= memo.bank %>円</p></h3></td>
           </tr>
         <% end %><br>
       </table>
@@ -45,4 +42,3 @@
       <% end %>
     </details> 
   <% end %>
-</div>
